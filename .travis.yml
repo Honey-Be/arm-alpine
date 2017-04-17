@@ -21,8 +21,8 @@ script:
   if [ "$TRAVIS_BRANCH" == "master" ]; then
     docker login -u="$DOCKER_USER" -p="$DOCKER_PASS"
     TAG=$(grep "FROM " Dockerfile | sed 's/.*://')
-    docker tag honeybe/arm-alpine:build hypriot/rpi-alpine:$TAG
-    docker tag honeybe/arm-alpine:build hypriot/rpi-alpine:latest
+    docker tag honeybe/arm-alpine:build honeybe/arm-alpine:$TAG
+    docker tag honeybe/arm-alpine:build honeybe/arm-alpine:latest
     docker push honeybe/arm-alpine:$TAG
     docker push honeybe/arm-alpine:latest
   fi
