@@ -26,3 +26,4 @@ script:
     docker push honeybe/arm-alpine:$TAG
     docker push honeybe/arm-alpine:latest
   fi
+  
